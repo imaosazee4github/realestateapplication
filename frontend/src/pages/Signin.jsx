@@ -3,6 +3,7 @@ import {Link }from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart,signInSuccess,signInFailure } from '../redux/user/userslice';
+import OAUTH from '../components/OAUTH.jsx';
 
 
 export default function Signin() {
@@ -53,6 +54,7 @@ export default function Signin() {
         <input type="password" placeholder="Password" className="border p-3 rounded-lg" id='password' onChange={handleChange}/>
         <button disabled={loading} className="bg-slate-700 text-[orangered] p-3 rounded-lg font-bold uppercase hover:opacity-90
         disabled:opacity-80">{loading ? "Loading..." : "Signin"}</button>
+        <OAUTH />
       </form>
       <div className='flex gap-2 mt-5'>
         
