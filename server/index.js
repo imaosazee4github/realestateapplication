@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from "./route/user_route.js";
 import authRouter from "./route/auth-route.js";
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 dotenv.config()
 
@@ -9,6 +10,8 @@ dotenv.config()
 const app = express();
 
 app.use(express.json());
+
+app.use(cookieParser())
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log('MongoDB Connected'))
